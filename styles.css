@@ -8,7 +8,8 @@
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #e2e8f0;
+    background: #0a0a0a;
     overflow-x: hidden;
 }
 
@@ -23,8 +24,9 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
@@ -52,14 +54,15 @@ body {
 }
 
 .nav-logo h2 {
-    color: #2563eb;
+    color: #00ffff;
     font-weight: 700;
     font-size: 1.5rem;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .nav-logo span {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 0.9rem;
     font-weight: 400;
     margin: 0;
@@ -73,13 +76,14 @@ body {
 
 .nav-menu a {
     text-decoration: none;
-    color: #333;
+    color: #e2e8f0;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
-    color: #2563eb;
+    color: #00ffff;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
 }
 
 .hamburger {
@@ -91,9 +95,10 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: #333;
+    background: #00ffff;
     margin: 3px 0;
     transition: 0.3s;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
 
 /* 主頁橫幅 */
@@ -101,7 +106,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -114,8 +119,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,255,255,0.2)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.4;
 }
 
 .hero-container {
@@ -158,24 +163,28 @@ body {
 }
 
 .btn-primary {
-    background: #2563eb;
-    color: white;
+    background: linear-gradient(135deg, #00ffff 0%, #0080ff 100%);
+    color: #0a0a0a;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 .btn-primary:hover {
-    background: #1d4ed8;
+    background: linear-gradient(135deg, #00e6e6 0%, #0066cc 100%);
     transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
 }
 
 .btn-secondary {
     background: transparent;
-    color: white;
-    border: 2px solid white;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: #2563eb;
+    background: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
 }
 
 /* 動畫元素 */
@@ -193,11 +202,12 @@ body {
 
 .floating-card {
     position: absolute;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 255, 255, 0.05);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.3);
     border-radius: 15px;
     padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
     text-align: center;
     transition: all 0.3s ease;
     transform-style: preserve-3d;
@@ -206,12 +216,15 @@ body {
 
 .floating-card i {
     font-size: 2rem;
+    color: #00ffff;
     margin-bottom: 0.5rem;
     display: block;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
 }
 
 .floating-card span {
     font-weight: 600;
+    color: #e2e8f0;
 }
 
 .card-1 {
@@ -394,13 +407,14 @@ body {
 .section-header h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #00ffff;
     margin-bottom: 1rem;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
 .section-header p {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #94a3b8;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -408,7 +422,19 @@ body {
 /* 服務區塊 */
 .services {
     padding: 6rem 0;
-    background: #f8fafc;
+    background: #111111;
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
 }
 
 .services-grid {
@@ -418,28 +444,32 @@ body {
 }
 
 .service-card {
-    background: white;
+    background: rgba(20, 20, 20, 0.8);
     padding: 2.5rem;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    position: relative;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.4);
 }
 
 .service-icon {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, #00ffff, #0080ff);
     border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 .service-icon i {
@@ -451,11 +481,11 @@ body {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #1e293b;
+    color: #e2e8f0;
 }
 
 .service-card p {
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 1.5rem;
 }
 
@@ -465,7 +495,7 @@ body {
 
 .service-card li {
     padding: 0.5rem 0;
-    color: #64748b;
+    color: #94a3b8;
     position: relative;
     padding-left: 1.5rem;
 }
@@ -474,14 +504,15 @@ body {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #2563eb;
+    color: #00ffff;
     font-weight: bold;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
 
 /* 關於我們 */
 .about {
     padding: 6rem 0;
-    background: white;
+    background: #0a0a0a;
 }
 
 .about-content {
@@ -494,13 +525,14 @@ body {
 .about-text h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #00ffff;
     margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
 .about-text p {
     font-size: 1.1rem;
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 2rem;
     line-height: 1.8;
 }
@@ -518,12 +550,13 @@ body {
 .stat h3 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #2563eb;
+    color: #00ffff;
     margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
 .stat p {
-    color: #64748b;
+    color: #94a3b8;
     font-weight: 500;
 }
 
@@ -536,13 +569,14 @@ body {
 .image-placeholder {
     width: 300px;
     height: 300px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #00ffff, #0080ff);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #0a0a0a;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
 }
 
 .image-placeholder i {
@@ -553,7 +587,19 @@ body {
 /* 解決方案 */
 .solutions {
     padding: 6rem 0;
-    background: #f8fafc;
+    background: #111111;
+    position: relative;
+}
+
+.solutions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="15" height="15" patternUnits="userSpaceOnUse"><path d="M 15 0 L 0 0 0 15" fill="none" stroke="rgba(0,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
 }
 
 .solutions-grid {
@@ -563,27 +609,30 @@ body {
 }
 
 .solution-card {
-    background: white;
+    background: rgba(20, 20, 20, 0.8);
     padding: 2rem;
     border-radius: 15px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .solution-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.4);
 }
 
 .solution-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, #00ffff, #0080ff);
     border-radius: 15px;
     display: flex;
     align-items: center;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
     justify-content: center;
     margin: 0 auto 1rem;
 }
@@ -597,18 +646,18 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #1e293b;
+    color: #e2e8f0;
 }
 
 .solution-card p {
-    color: #64748b;
+    color: #94a3b8;
     font-size: 0.9rem;
 }
 
 /* 部落格區塊 */
 .blog {
     padding: 6rem 0;
-    background: white;
+    background: #0a0a0a;
 }
 
 .blog-container {
@@ -623,17 +672,19 @@ body {
 }
 
 .blog-card {
-    background: white;
+    background: rgba(20, 20, 20, 0.8);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .blog-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 255, 255, 0.2);
+    border-color: rgba(0, 255, 255, 0.4);
 }
 
 .blog-card.featured {
@@ -643,7 +694,7 @@ body {
 .blog-image {
     position: relative;
     height: 200px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, #00ffff, #0080ff);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -654,7 +705,7 @@ body {
 }
 
 .blog-image .image-placeholder {
-    color: white;
+    color: #0a0a0a;
     text-align: center;
 }
 
@@ -668,12 +719,13 @@ body {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: rgba(37, 99, 235, 0.9);
-    color: white;
+    background: rgba(0, 255, 255, 0.9);
+    color: #0a0a0a;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .blog-content {
@@ -684,7 +736,7 @@ body {
     font-size: 1.3rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #1e293b;
+    color: #e2e8f0;
     line-height: 1.4;
 }
 
@@ -693,7 +745,7 @@ body {
 }
 
 .blog-content p {
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -713,14 +765,15 @@ body {
 }
 
 .read-more {
-    color: #2563eb;
+    color: #00ffff;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .read-more:hover {
-    color: #1d4ed8;
+    color: #00e6e6;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
 }
 
 .load-more {
@@ -736,17 +789,19 @@ body {
 }
 
 .sidebar-widget {
-    background: #f8fafc;
+    background: rgba(20, 20, 20, 0.8);
     padding: 1.5rem;
     border-radius: 15px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .sidebar-widget h4 {
     font-size: 1.2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #1e293b;
+    color: #00ffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .tags {
@@ -756,21 +811,22 @@ body {
 }
 
 .tag {
-    background: white;
-    color: #64748b;
+    background: rgba(20, 20, 20, 0.8);
+    color: #94a3b8;
     padding: 0.5rem 1rem;
     border-radius: 20px;
     text-decoration: none;
     font-size: 0.9rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.3);
     transition: all 0.3s ease;
 }
 
 .tag:hover,
 .tag.active {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .popular-posts {
@@ -783,7 +839,7 @@ body {
     display: flex;
     gap: 1rem;
     padding: 1rem 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .popular-post:last-child {
@@ -793,20 +849,21 @@ body {
 .popular-post .post-image {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, #00ffff, #0080ff);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #0a0a0a;
     flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .popular-post .post-content h5 {
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
-    color: #1e293b;
+    color: #e2e8f0;
     line-height: 1.4;
 }
 
@@ -823,14 +880,17 @@ body {
 
 .newsletter-form input {
     padding: 0.75rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.3);
     border-radius: 8px;
     font-size: 0.9rem;
+    background: rgba(10, 10, 10, 0.8);
+    color: #e2e8f0;
 }
 
 .newsletter-form input:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 .newsletter-form .btn {
@@ -840,7 +900,7 @@ body {
 
 /* 頁面標題 */
 .page-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
     color: white;
     padding: 8rem 0 4rem;
     position: relative;
@@ -853,8 +913,8 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(0,255,255,0.2)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.4;
 }
 
 .page-header-content {
@@ -899,9 +959,9 @@ body {
 
 /* 文章篩選器 */
 .blog-filter {
-    background: white;
+    background: #111111;
     padding: 2rem 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .filter-container {
@@ -920,8 +980,9 @@ body {
 
 .filter-tab {
     padding: 0.75rem 1.5rem;
-    border: 1px solid #e2e8f0;
-    background: white;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(20, 20, 20, 0.8);
+    color: #94a3b8;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -931,9 +992,10 @@ body {
 
 .filter-tab:hover,
 .filter-tab.active {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .search-box {
@@ -944,14 +1006,17 @@ body {
 .search-box input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.5rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.3);
     border-radius: 25px;
     font-size: 0.9rem;
+    background: rgba(10, 10, 10, 0.8);
+    color: #e2e8f0;
 }
 
 .search-box input:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 .search-box i {
@@ -959,7 +1024,7 @@ body {
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    color: #94a3b8;
+    color: #00ffff;
 }
 
 /* 分頁 */
@@ -973,8 +1038,9 @@ body {
 .page-btn {
     width: 40px;
     height: 40px;
-    border: 1px solid #e2e8f0;
-    background: white;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(20, 20, 20, 0.8);
+    color: #94a3b8;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -986,9 +1052,10 @@ body {
 
 .page-btn:hover,
 .page-btn.active {
-    background: #2563eb;
-    color: white;
-    border-color: #2563eb;
+    background: rgba(0, 255, 255, 0.2);
+    color: #00ffff;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .page-btn.next {
@@ -1007,7 +1074,7 @@ body {
     display: flex;
     gap: 1rem;
     padding: 1rem 0;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .comment:last-child {
@@ -1017,25 +1084,26 @@ body {
 .comment-avatar {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, #00ffff, #0080ff);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #0a0a0a;
     flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .comment-content h6 {
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
-    color: #1e293b;
+    color: #e2e8f0;
 }
 
 .comment-content p {
     font-size: 0.8rem;
-    color: #64748b;
+    color: #94a3b8;
     margin-bottom: 0.25rem;
     line-height: 1.4;
 }
@@ -1047,14 +1115,27 @@ body {
 
 /* 導航欄活躍狀態 */
 .nav-menu a.active {
-    color: #2563eb;
+    color: #00ffff;
     font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
 }
 
 /* 聯絡我們 */
 .contact {
     padding: 6rem 0;
-    background: white;
+    background: #111111;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="rgba(0,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
 }
 
 .contact-content {
@@ -1078,30 +1159,32 @@ body {
 .contact-item i {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    background: linear-gradient(135deg, #00ffff, #0080ff);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #0a0a0a;
     font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
 }
 
 .contact-item h4 {
     font-weight: 600;
-    color: #1e293b;
+    color: #e2e8f0;
     margin-bottom: 0.25rem;
 }
 
 .contact-item p {
-    color: #64748b;
+    color: #94a3b8;
 }
 
 .contact-form {
-    background: #f8fafc;
+    background: rgba(20, 20, 20, 0.8);
     padding: 2rem;
     border-radius: 20px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .form-group {
@@ -1112,23 +1195,27 @@ body {
 .form-group textarea {
     width: 100%;
     padding: 1rem;
-    border: 1px solid #e2e8f0;
+    border: 1px solid rgba(0, 255, 255, 0.3);
     border-radius: 10px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    background: rgba(10, 10, 10, 0.8);
+    color: #e2e8f0;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: #00ffff;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 }
 
 /* 頁腳 */
 .footer {
-    background: #1e293b;
+    background: #0a0a0a;
     color: white;
     padding: 3rem 0 1rem;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .footer-content {
@@ -1175,23 +1262,25 @@ body {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: #334155;
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.3);
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: #00ffff;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .social-links a:hover {
-    background: #2563eb;
+    background: rgba(0, 255, 255, 0.2);
     transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
 }
 
 .footer-bottom {
-    border-top: 1px solid #334155;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
     padding-top: 1rem;
     text-align: center;
 }
@@ -1207,17 +1296,18 @@ body {
     }
     
     .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 2rem 0;
-    }
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: rgba(10, 10, 10, 0.95);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+    padding: 2rem 0;
+    backdrop-filter: blur(10px);
+}
     
     .nav-menu.active {
         left: 0;
