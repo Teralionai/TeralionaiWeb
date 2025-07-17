@@ -198,9 +198,9 @@ document.addEventListener('mousemove', function(e) {
     const mouseY = e.clientY / window.innerHeight;
     
     cards.forEach((card, index) => {
-        const speed = (index + 1) * 0.5;
-        const x = (mouseX - 0.5) * speed * 20;
-        const y = (mouseY - 0.5) * speed * 20;
+        const speed = (index + 1) * 0.3; // 調整速度讓5個卡片不會移動太快
+        const x = (mouseX - 0.5) * speed * 15;
+        const y = (mouseY - 0.5) * speed * 15;
         
         card.style.transform = `translate(${x}px, ${y}px)`;
     });
