@@ -41,19 +41,27 @@ body {
     align-items: center;
 }
 
-.nav-logo a {
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-title a {
     text-decoration: none;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     transition: all 0.3s ease;
+    height: 100px;
 }
 
-.nav-logo a:hover {
+.nav-title a:hover {
     transform: translateY(-1px);
 }
 
-.nav-logo h2 {
+.nav-title h2 {
     color: #00ffff;
     font-weight: 700;
     font-size: 1.5rem;
@@ -61,18 +69,55 @@ body {
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
 }
 
-.nav-logo span {
+.nav-title span {
     color: #94a3b8;
     font-size: 0.9rem;
     font-weight: 400;
     margin: 0;
 }
 
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.logo-image {
+    height: 100px;
+    width: auto;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.3));
+    animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow {
+    0% {
+        filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.2));
+    }
+    100% {
+        filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.6));
+    }
+}
+
+.nav-logo a:hover .logo-image {
+    transform: scale(1.05);
+}
+
+
+
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
+
+
 
 .nav-menu a {
     text-decoration: none;
@@ -381,28 +426,28 @@ body {
     
     @keyframes orbit1 {
         0% { 
-            transform: rotate(0deg) translateX(120px) rotate(0deg);
+            transform: rotateY(0deg) rotateX(20deg) translateZ(80px) rotateY(0deg);
         }
         100% { 
-            transform: rotate(360deg) translateX(120px) rotate(-360deg);
+            transform: rotateY(360deg) rotateX(20deg) translateZ(80px) rotateY(-360deg);
         }
     }
     
     @keyframes orbit2 {
         0% { 
-            transform: rotate(72deg) translateX(120px) rotate(-72deg);
+            transform: rotateY(120deg) rotateX(-15deg) translateZ(100px) rotateY(-120deg);
         }
         100% { 
-            transform: rotate(432deg) translateX(120px) rotate(-432deg);
+            transform: rotateY(480deg) rotateX(-15deg) translateZ(100px) rotateY(-480deg);
         }
     }
     
     @keyframes orbit3 {
         0% { 
-            transform: rotate(144deg) translateX(120px) rotate(-144deg);
+            transform: rotateY(240deg) rotateX(30deg) translateZ(70px) rotateY(-240deg);
         }
         100% { 
-            transform: rotate(504deg) translateX(120px) rotate(-504deg);
+            transform: rotateY(600deg) rotateX(30deg) translateZ(70px) rotateY(-600deg);
         }
     }
 }
@@ -428,95 +473,7 @@ body {
     margin: 0 auto;
 }
 
-/* 服務區塊 */
-.services {
-    padding: 6rem 0;
-    background: #111111;
-    position: relative;
-}
 
-.services::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(0,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-    opacity: 0.3;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-.service-card {
-    background: rgba(20, 20, 20, 0.8);
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    position: relative;
-}
-
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
-    border-color: rgba(0, 255, 255, 0.4);
-}
-
-.service-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #00ffff, #0080ff);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-}
-
-.service-icon i {
-    font-size: 2rem;
-    color: white;
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #e2e8f0;
-}
-
-.service-card p {
-    color: #94a3b8;
-    margin-bottom: 1.5rem;
-}
-
-.service-card ul {
-    list-style: none;
-}
-
-.service-card li {
-    padding: 0.5rem 0;
-    color: #94a3b8;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
-.service-card li::before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: #00ffff;
-    font-weight: bold;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
-}
 
 /* 關於我們 */
 .about {
@@ -1304,19 +1261,31 @@ body {
         display: flex;
     }
     
+    .nav-brand {
+        margin: 0 auto;
+    }
+    
+    .nav-title {
+        display: none;
+    }
+    
+    .nav-logo {
+        margin: 0;
+    }
+    
     .nav-menu {
-    position: fixed;
-    left: -100%;
-    top: 70px;
-    flex-direction: column;
-    background-color: rgba(10, 10, 10, 0.95);
-    width: 100%;
-    text-align: center;
-    transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
-    padding: 2rem 0;
-    backdrop-filter: blur(10px);
-}
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.3);
+        padding: 2rem 0;
+        backdrop-filter: blur(10px);
+    }
     
     .nav-menu.active {
         left: 0;
@@ -1352,7 +1321,6 @@ body {
         gap: 1rem;
     }
     
-    .services-grid,
     .solutions-grid {
         grid-template-columns: 1fr;
     }
@@ -1421,7 +1389,6 @@ body {
         font-size: 2rem;
     }
     
-    .service-card,
     .solution-card {
         padding: 1.5rem;
     }
@@ -1429,8 +1396,9 @@ body {
     .tech-animation {
         height: 350px;
         width: 350px;
-        perspective: none;
-        transform-style: flat;
+        perspective: 800px;
+        transform-style: preserve-3d;
+        margin-left: -50px; /* 將中心點往左移動 */
     }
     
     .floating-card {
@@ -1448,29 +1416,29 @@ body {
     
     /* 手機版調整軌道動畫 */
     .card-1 {
-        animation: orbit1 12s linear infinite;
+        animation: orbit1 15s linear infinite;
         display: block;
     }
     
     .card-2 {
-        animation: orbit2 16s linear infinite;
+        animation: orbit2 20s linear infinite;
         display: block;
     }
     
     .card-3 {
-        animation: orbit3 14s linear infinite;
+        animation: orbit3 17s linear infinite;
         display: block;
     }
     
     .card-4 {
-        animation: orbit4 18s linear infinite;
+        animation: orbit4 22s linear infinite;
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
     
     .card-5 {
-        animation: orbit5 20s linear infinite;
+        animation: orbit5 25s linear infinite;
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -1478,19 +1446,19 @@ body {
     
     @keyframes orbit4 {
         0% { 
-            transform: rotate(0deg) translateX(120px) rotate(0deg);
+            transform: rotateY(60deg) rotateX(-25deg) translateZ(90px) rotateY(-60deg);
         }
         100% { 
-            transform: rotate(360deg) translateX(120px) rotate(-360deg);
+            transform: rotateY(420deg) rotateX(-25deg) translateZ(90px) rotateY(-420deg);
         }
     }
     
     @keyframes orbit5 {
         0% { 
-            transform: rotate(72deg) translateX(120px) rotate(-72deg);
+            transform: rotateY(180deg) rotateX(10deg) translateZ(110px) rotateY(-180deg);
         }
         100% { 
-            transform: rotate(432deg) translateX(120px) rotate(-432deg);
+            transform: rotateY(540deg) rotateX(10deg) translateZ(110px) rotateY(-540deg);
         }
     }
 } 
