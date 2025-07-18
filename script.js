@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.background = 'rgba(10, 10, 10, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 255, 255, 0.2)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.background = 'rgba(10, 10, 10, 0.95)';
             navbar.style.boxShadow = 'none';
         }
     });
@@ -233,9 +233,10 @@ window.addEventListener('scroll', function() {
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, #2563eb, #3b82f6);
+            background: linear-gradient(90deg, #00ffff, #0080ff);
             z-index: 10001;
             transition: width 0.1s ease;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
         `;
         document.body.appendChild(progressBar);
     }
