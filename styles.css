@@ -1442,8 +1442,11 @@ body {
         animation: orbit3 14s linear infinite;
     }
     
-    .card-4,
+    .card-4 {
+        animation: orbit4 18s linear infinite;
+    }
+    
     .card-5 {
-        display: none; /* 在手機版隱藏新增的卡片以避免擁擠 */
+        animation: orbit5 20s linear infinite;
     }
 } 
