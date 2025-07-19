@@ -155,6 +155,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero::before {
@@ -1263,20 +1264,38 @@ body {
     
     .nav-brand {
         margin: 0 auto;
+        gap: 0.5rem;
     }
     
     .nav-title {
-        display: none;
+        display: block;
     }
     
     .nav-logo {
         margin: 0;
     }
     
+    .logo-image {
+        height: 50px;
+        width: auto;
+    }
+    
+    .nav-title h2 {
+        font-size: 1.2rem;
+    }
+    
+    .nav-title span {
+        font-size: 0.8rem;
+    }
+    
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 70px;
+        top: 60px;
         flex-direction: column;
         background-color: rgba(10, 10, 10, 0.95);
         width: 100%;
@@ -1289,6 +1308,10 @@ body {
     
     .nav-menu.active {
         left: 0;
+    }
+    
+    .hero {
+        padding-top: 60px;
     }
     
     .hero-container {
