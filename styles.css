@@ -237,6 +237,11 @@ section[id] {
     margin-bottom: 1.5rem;
 }
 
+.hero-title-en {
+    font-size: clamp(1.9rem, 4vw, 2.8rem) !important;
+    line-height: 1.15 !important;
+}
+
 .hero-desc {
     font-size: 1.05rem;
     line-height: 1.7;
