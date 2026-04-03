@@ -94,6 +94,45 @@ document.addEventListener('DOMContentLoaded', function () {
         el.style.transitionDelay = `${i * 100}ms`;
     });
 
+    // Contact form → Google Apps Script
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxSt991pMmi-rMp4sD2ubERpLPgsIl9-fTbaEpPEIw1uoz6pqmwMaXntDD_qMqhMMrIeg/exec';
+
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = '發送中...';
+            btn.disabled = true;
+
+            const data = {
+                name: this.querySelector('[name="name"]').value,
+                email: this.querySelector('[name="email"]').value,
+                company: this.querySelector('[name="company"]').value,
+                message: this.querySelector('[name="message"]').value,
+            };
+
+            fetch(APPS_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            })
+            .then(() => {
+                showToast('訊息已發送！我們會盡快回覆您。', 'success');
+                this.reset();
+            })
+            .catch(() => {
+                showToast('發送失敗，請直接寄信至 kc@teralion.ai', 'error');
+            })
+            .finally(() => {
+                btn.textContent = originalText;
+                btn.disabled = false;
+            });
+        });
+    }
+
     // Nav background on scroll
     window.addEventListener('scroll', function () {
         const navbar = document.querySelector('.navbar');
