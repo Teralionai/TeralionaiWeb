@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Scroll reveal
     const reveals = document.querySelectorAll(
-        '.stat-item, .about-body, .accordion-item, .contact-left, .contact-form, .owl-narrative, .owl-adv-card, .owl-flow-section, .owl-cta'
+        '.stat-item, .about-body, .accordion-item, .contact-left, .contact-form, .owl-narrative, .owl-showcase, .owl-adv-card, .owl-flow-section, .owl-cta'
     );
 
     reveals.forEach(el => el.classList.add('reveal'));
