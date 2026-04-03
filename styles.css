@@ -135,6 +135,23 @@ section[id] {
     color: var(--accent) !important;
 }
 
+.lang-switch {
+    font-family: var(--font-display);
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em;
+    color: var(--accent) !important;
+    padding: 4px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: all 0.2s !important;
+}
+
+.lang-switch:hover {
+    background: var(--accent);
+    color: var(--bg) !important;
+}
+
 .hamburger {
     display: none;
     background: none;
