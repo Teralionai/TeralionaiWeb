@@ -104,30 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Contact form
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const inputs = this.querySelectorAll('input, textarea');
-            let valid = true;
-
-            inputs.forEach(input => {
-                if (input.required && !input.value.trim()) valid = false;
-            });
-
-            const email = this.querySelector('input[type="email"]');
-            if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) valid = false;
-
-            if (!valid) {
-                showToast('請填寫所有必填欄位', 'error');
-                return;
-            }
-
-            showToast('訊息已發送！我們會盡快回覆您。', 'success');
-            this.reset();
-        });
-    }
 });
 
 function showToast(message, type) {

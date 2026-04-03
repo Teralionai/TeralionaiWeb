@@ -358,13 +358,17 @@
                         kc@teralion.ai
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/kc@teralion.ai" method="POST">
+                    <input type="hidden" name="_subject" value="兆獅智能官網 — 新諮詢訊息">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://teralion.ai/#contact">
+                    <input type="text" name="_honey" style="display:none">
                     <div class="form-row">
-                        <input type="text" placeholder="您的姓名" required>
-                        <input type="email" placeholder="電子郵件" required>
+                        <input type="text" name="name" placeholder="您的姓名" required>
+                        <input type="email" name="email" placeholder="電子郵件" required>
                     </div>
-                    <input type="text" placeholder="公司名稱">
-                    <textarea placeholder="請描述您的需求" rows="4" required></textarea>
+                    <input type="text" name="company" placeholder="公司名稱">
+                    <textarea name="message" placeholder="請描述您的需求" rows="4" required></textarea>
                     <button type="submit" class="btn-main">發送訊息</button>
                 </form>
             </div>
