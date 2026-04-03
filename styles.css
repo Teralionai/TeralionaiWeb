@@ -238,8 +238,8 @@ section[id] {
 }
 
 .hero-title-en {
-    font-size: clamp(1.9rem, 4vw, 2.8rem) !important;
-    line-height: 1.15 !important;
+    font-size: clamp(1.5rem, 3.2vw, 2.4rem) !important;
+    line-height: 1.2 !important;
 }
 
 .hero-desc {
