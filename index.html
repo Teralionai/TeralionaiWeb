@@ -51,7 +51,7 @@
         "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "email": "teralionai@gmail.com",
+            "email": "kc@teralion.ai",
             "availableLanguage": ["zh-TW", "en"]
         }
     }
@@ -106,7 +106,6 @@
                     <li><a href="#how">運作方式</a></li>
                     <li><a href="#examples">指令範例</a></li>
                     <li><a href="#about">關於我們</a></li>
-                    <li><a href="blog.html">技術文章</a></li>
                     <li class="nav-cta"><a href="#contact" class="btn btn-primary btn-sm">預約展示</a></li>
                 </ul>
             </nav>
@@ -304,40 +303,23 @@
         <!-- 聯絡我們 -->
         <section id="contact" class="section">
             <div class="container">
-                <div class="contact-card">
+                <div class="contact-card contact-card-simple">
                     <div class="contact-info">
                         <span class="eyebrow">聯絡我們</span>
                         <h2>準備好用指令建置了嗎？</h2>
-                        <p>留下你的需求，我們會安排一次線上展示，用你的實際情境現場建置給你看。</p>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
                             <div>
                                 <h4>電子郵件</h4>
-                                <p><a href="mailto:teralionai@gmail.com">teralionai@gmail.com</a></p>
+                                <p>
+                                    <a href="mailto:kc@teralion.ai" id="contactEmailText">kc@teralion.ai</a>
+                                    <button type="button" class="copy-btn" id="copyEmailBtn" data-email="kc@teralion.ai" aria-label="複製 Email" title="複製 Email">
+                                        <i class="far fa-copy"></i>
+                                    </button>
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">姓名</label>
-                                <input id="name" name="name" type="text" placeholder="您的姓名" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">電子郵件</label>
-                                <input id="email" name="email" type="email" placeholder="name@company.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="company">公司名稱</label>
-                            <input id="company" name="company" type="text" placeholder="公司名稱">
-                        </div>
-                        <div class="form-group">
-                            <label for="need">想建置什麼？</label>
-                            <textarea id="need" name="message" placeholder="例如：建立客戶管理系統，業務可登錄拜訪紀錄，主管看週報" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">送出需求</button>
-                    </form>
                 </div>
             </div>
         </section>
@@ -367,8 +349,7 @@
                     <ul>
                         <li><a href="#about">關於我們</a></li>
                         <li><a href="#how">運作方式</a></li>
-                        <li><a href="blog.html">技術文章</a></li>
-                        <li><a href="#contact">聯絡我們</a></li>
+                            <li><a href="#contact">聯絡我們</a></li>
                     </ul>
                 </div>
             </div>

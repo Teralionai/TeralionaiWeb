@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     initReveal();
     initCounters();
     initHeroConsole();
-    initBlog();
 });
 
 // ---------- 導航欄 ----------
@@ -61,76 +60,38 @@ function initNavbar() {
 }
 
 // ---------- 表單 ----------
-// 聯絡表單透過 Google Apps Script 寄信
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxSt991pMmi-rMp4sD2ubERpLPgsIl9-fTbaEpPEIw1uoz6pqmwMaXntDD_qMqhMMrIeg/exec';
-
+// 本站為 GitHub Pages 靜態網頁，不在線上收集表單資料；
+// 聯絡方式改為 mailto 連結，並提供「複製 Email」按鈕。
 function initForms() {
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = this.querySelector('#name, input[type="text"]').value.trim();
-            const email = this.querySelector('input[type="email"]').value.trim();
-            const message = this.querySelector('textarea').value.trim();
-
-            if (!name || !email || !message) {
-                showNotification('請填寫所有必填欄位', 'error');
-                return;
-            }
-            if (!isValidEmail(email)) {
-                showNotification('請輸入有效的電子郵件地址', 'error');
-                return;
-            }
-            const btn = this.querySelector('button[type="submit"]');
-            const originalText = btn.textContent;
-            btn.textContent = '送出中...';
-            btn.disabled = true;
-
-            const data = {
-                name,
-                email,
-                company: (this.querySelector('[name="company"]') || {}).value || '',
-                message
+    const copyBtn = document.getElementById('copyEmailBtn');
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function () {
+            const email = this.dataset.email;
+            const btn = this;
+            const done = () => {
+                showNotification('已複製 ' + email, 'success');
+                btn.classList.add('copied');
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => { btn.classList.remove('copied'); btn.innerHTML = '<i class="far fa-copy"></i>'; }, 1600);
             };
-
-            fetch(APPS_SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-                .then(() => {
-                    showNotification('需求已送出，我們會盡快與您聯絡。', 'success');
-                    this.reset();
-                })
-                .catch(() => {
-                    showNotification('送出失敗，請直接寄信至 teralionai@gmail.com', 'error');
-                })
-                .finally(() => {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                });
-        });
-    }
-
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value.trim();
-            if (!isValidEmail(email)) {
-                showNotification('請輸入有效的電子郵件地址', 'error');
-                return;
+            const fail = () => showNotification('無法自動複製，請手動選取 Email', 'error');
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(email).then(done).catch(fail);
+            } else {
+                const range = document.createRange();
+                range.selectNodeContents(document.getElementById('contactEmailText'));
+                const sel = window.getSelection();
+                sel.removeAllRanges(); sel.addRange(range);
+                try { document.execCommand('copy') ? done() : fail(); } catch (e) { fail(); }
+                sel.removeAllRanges();
             }
-            showNotification('訂閱成功，感謝您的關注。', 'success');
-            this.reset();
         });
     }
 }
 
 // ---------- 進場動畫 ----------
 function initReveal() {
-    const targets = document.querySelectorAll('.product-card, .step, .example-card, .stat, .blog-card');
+    const targets = document.querySelectorAll('.product-card, .step, .example-card, .stat');
     if (!targets.length || !('IntersectionObserver' in window)) return;
 
     const observer = new IntersectionObserver((entries) => {
@@ -244,62 +205,7 @@ function initHeroConsole() {
     });
 }
 
-// ---------- 技術文章頁 ----------
-function initBlog() {
-    const blogCards = document.querySelectorAll('.blog-card');
-    const filterTabs = document.querySelectorAll('.filter-tab');
-
-    function applyFilter(category) {
-        blogCards.forEach(card => {
-            const match = category === 'all' || card.dataset.category === category;
-            card.style.display = match ? '' : 'none';
-        });
-    }
-
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', function () {
-            filterTabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            applyFilter(this.dataset.category);
-        });
-    });
-
-    document.querySelectorAll('.tag[data-category]').forEach(tag => {
-        tag.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
-            const category = this.dataset.category;
-            filterTabs.forEach(t => t.classList.toggle('active', t.dataset.category === category));
-            applyFilter(category);
-        });
-    });
-
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', function () {
-            const term = this.value.toLowerCase();
-            blogCards.forEach(card => {
-                const title = card.querySelector('h3').textContent.toLowerCase();
-                const content = card.querySelector('p').textContent.toLowerCase();
-                card.style.display = (title.includes(term) || content.includes(term)) ? '' : 'none';
-            });
-        });
-    }
-
-    document.querySelectorAll('.page-btn').forEach(btn => {
-        btn.addEventListener('click', function () {
-            document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-        });
-    });
-}
-
 // ---------- 工具 ----------
-function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-}
-
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;

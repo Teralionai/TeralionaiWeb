@@ -13,7 +13,6 @@
 ```
 AiGenValueWeb/
 ├── index.html            # 首頁：產品、運作方式、指令範例、關於我們、聯絡我們
-├── blog.html             # 技術文章頁
 ├── styles.css            # 樣式（明亮簡潔主題，CSS 變數定義於 :root）
 ├── script.js             # 導航、表單、進場動畫、Hero 指令示範、文章篩選
 ├── aigenvalue-logo.svg   # 標誌（向量）
@@ -39,7 +38,7 @@ python3 -m http.server 8080
 更換網域時需一併更新：
 
 - `CNAME`
-- `index.html` 與 `blog.html` 中的 `canonical`、`og:url`、`og:image`、`twitter:*` 與結構化資料的網址
+- `index.html` 中的 `canonical`、`og:url`、`og:image`、`twitter:*` 與結構化資料的網址
 
 ## 修改內容
 
