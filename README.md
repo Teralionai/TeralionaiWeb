@@ -15,8 +15,8 @@ AiGenValueWeb/
 ├── index.html            # 首頁：產品、運作方式、指令範例、關於我們、聯絡我們
 ├── styles.css            # 樣式（明亮簡潔主題，CSS 變數定義於 :root）
 ├── script.js             # 導航、表單、進場動畫、Hero 指令示範、文章篩選
-├── aigenvalue-logo.svg   # 標誌（向量）
-├── aigenvalue-logo.png   # 標誌（1024px，供 Open Graph 與 Apple touch icon 使用）
+├── aigenvalue-logo.png   # 完整標誌（含字樣，供 Open Graph 分享圖使用）
+├── aigenvalue-mark.png   # 標誌圖示（去背，供導覽列與 favicon 使用）
 ├── CNAME                 # GitHub Pages 自訂網域
 └── README.md
 ```
@@ -49,9 +49,9 @@ python3 -m http.server 8080
 
 ```css
 :root {
-    --accent: #2563eb;      /* 主色 */
-    --accent-2: #06b6d4;    /* 輔色（漸層用） */
-    --accent-soft: #eaf1ff; /* 淡色背景 */
+    --accent: #0f5c8c;      /* 主色 */
+    --accent-2: #1f8fb8;    /* 輔色（漸層用） */
+    --accent-soft: #e8f1f8; /* 淡色背景 */
 }
 ```
 
