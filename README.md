@@ -1,115 +1,74 @@
-# 兆獅智能 (Teralionai) 官方網站
+# 安根創新 AiGenValue 官方網站
 
-這是一個現代化的科技公司網站，專為兆獅智能設計，參考了 All Tech Geeks 的設計風格，具有響應式設計和豐富的互動效果。
+安根創新 AiGenValue 的官方網站，靜態 HTML/CSS/JS，部署於 GitHub Pages。
 
-## 🌟 特色功能
+網站定位：**以指令驅動的 AI 建置平台**。用一句話描述需求，即可建置三種企業服務：
 
-- **現代化設計**: 採用漸層色彩和玻璃擬態效果
-- **響應式佈局**: 完美適配桌面、平板和手機設備
-- **流暢動畫**: 包含滾動動畫、懸停效果和載入動畫
-- **互動元素**: 表單驗證、通知系統和視差效果
-- **技術部落格**: 參考 All Tech Geeks 的部落格風格，包含文章列表、分類標籤和側邊欄
-- **SEO 優化**: 完整的 meta 標籤和語義化 HTML
+1. **官網建置**：品牌官網、產品頁、活動頁，含 SEO 與表單。
+2. **公司內部資料系統**：客戶、訂單、庫存、報表與審核流程。
+3. **Harness 超級助理與客服系統**：AI 客服前台對話介面，加上對話紀錄、工單與真人接手的後台管理系統。
 
-## 📁 項目結構
+## 項目結構
 
 ```
-TeralionaiWeb/
-├── index.html          # 主頁面
-├── blog.html           # 技術文章頁面
-├── styles.css          # 樣式文件
-├── script.js           # JavaScript 功能
-└── README.md           # 項目說明
+AiGenValueWeb/
+├── index.html            # 首頁：產品、運作方式、指令範例、關於我們、聯絡我們
+├── blog.html             # 技術文章頁
+├── styles.css            # 樣式（明亮簡潔主題，CSS 變數定義於 :root）
+├── script.js             # 導航、表單、進場動畫、Hero 指令示範、文章篩選
+├── aigenvalue-logo.svg   # 標誌（向量）
+├── aigenvalue-logo.png   # 標誌（1024px，供 Open Graph 與 Apple touch icon 使用）
+├── CNAME                 # GitHub Pages 自訂網域
+└── README.md
 ```
 
-## 🚀 部署到 GitHub Pages
+## 本地預覽
 
-### 步驟 1: 初始化 Git 倉庫
+任何靜態伺服器皆可，例如：
+
 ```bash
-git init
-git add .
-git commit -m "Initial commit: 兆獅智能官方網站"
+python3 -m http.server 8080
 ```
 
-### 步驟 2: 創建 GitHub 倉庫
-1. 前往 [GitHub](https://github.com) 創建新倉庫
-2. 倉庫名稱建議使用: `teralionai-website` 或 `teralionai.github.io`
+然後開啟 http://localhost:8080 。
 
-### 步驟 3: 推送代碼到 GitHub
-```bash
-git remote add origin https://github.com/你的用戶名/倉庫名稱.git
-git branch -M main
-git push -u origin main
-```
+## 部署到 GitHub Pages
 
-### 步驟 4: 啟用 GitHub Pages
-1. 進入 GitHub 倉庫頁面
-2. 點擊 "Settings" 標籤
-3. 在左側選單中找到 "Pages"
-4. 在 "Source" 部分選擇 "Deploy from a branch"
-5. 選擇 "main" 分支和 "/ (root)" 資料夾
-6. 點擊 "Save"
+推送到 `main` 分支後，GitHub Pages 會以倉庫根目錄自動部署。自訂網域由 `CNAME` 檔案決定。
 
-### 步驟 5: 等待部署
-GitHub Pages 會在幾分鐘內自動部署您的網站。部署完成後，您可以在以下網址訪問：
-- `https://你的用戶名.github.io/倉庫名稱/`
+更換網域時需一併更新：
 
-## 🎨 自定義配置
+- `CNAME`
+- `index.html` 與 `blog.html` 中的 `canonical`、`og:url`、`og:image`、`twitter:*` 與結構化資料的網址
 
-### 修改公司資訊
-在 `index.html` 中修改以下內容：
-- 公司名稱和標語
-- 聯絡資訊
-- 服務描述
-- 統計數據
+## 修改內容
 
-### 更改顏色主題
-在 `styles.css` 中修改 CSS 變數：
+- **公司與產品文案**：直接編輯 `index.html`。
+- **指令示範文字**：`script.js` 中 `initHeroConsole` 的 `prompts` 陣列。
+- **指令範例卡片**：`index.html` 中 `.example-card` 的 `data-prompt` 屬性。
+- **主題色**：`styles.css` 的 `:root` 變數：
+
 ```css
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #3b82f6;
-    --gradient-start: #667eea;
-    --gradient-end: #764ba2;
+    --accent: #2563eb;      /* 主色 */
+    --accent-2: #06b6d4;    /* 輔色（漸層用） */
+    --accent-soft: #eaf1ff; /* 淡色背景 */
 }
 ```
 
-### 添加新頁面
-1. 創建新的 HTML 文件
-2. 在導航欄中添加連結
-3. 更新樣式和腳本
+## 響應式斷點
 
-## 📱 響應式斷點
+- 桌面：1025px 以上
+- 平板：769px 到 1024px
+- 手機：768px 以下
 
-- **桌面**: 1200px 以上
-- **平板**: 768px - 1199px
-- **手機**: 767px 以下
+## 技術棧
 
-## 🔧 技術棧
+- HTML5、CSS3（Grid、Flexbox、CSS 變數）
+- 原生 JavaScript（無框架、無建置步驟）
+- Font Awesome 6 圖示
+- Google Fonts：Inter、Noto Sans TC
 
-- **HTML5**: 語義化標籤和現代化結構
-- **CSS3**: Flexbox、Grid、動畫和響應式設計
-- **JavaScript ES6+**: 模組化代碼和現代化語法
-- **Font Awesome**: 圖標庫
-- **Google Fonts**: Inter 字體
+## 授權
 
-## 🌐 瀏覽器支援
-
-- Chrome 60+
-- Firefox 55+
-- Safari 12+
-- Edge 79+
-
-## 📞 聯絡資訊
-
-如需技術支援或有任何問題，請聯絡：
-- 電子郵件: info@teralionai.com
-- 電話: +886 2 1234 5678
-
-## 📄 授權
-
-© 2024 兆獅智能 (Teralionai). 版權所有.
-
----
-
-**注意**: 部署前請確保所有聯絡資訊和公司資料都已正確更新。 
+© 2026 安根創新 AiGenValue. 版權所有.
