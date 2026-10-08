@@ -291,12 +291,14 @@ h1, h2, h3, h4 { line-height: 1.25; letter-spacing: -0.01em; color: var(--text);
 /* ---------- 產品 ---------- */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
 .product-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: #fff;
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -330,6 +332,8 @@ h1, h2, h3, h4 { line-height: 1.25; letter-spacing: -0.01em; color: var(--text);
 }
 .product-card h3 { font-size: 1.3rem; margin-bottom: .75rem; }
 .product-card > p { color: var(--muted); font-size: .97rem; margin-bottom: 1.25rem; }
+.product-cta { align-self: flex-start; margin-top: 1.5rem; }
+.product-cta i { font-size: .75rem; }
 
 /* ---------- 運作方式 ---------- */
 .steps {
