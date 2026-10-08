@@ -101,7 +101,36 @@
             </a>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#products">產品</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#products" class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">產品 <i class="fas fa-chevron-down"></i></a>
+                        <ul class="nav-dropdown-menu">
+                            <li>
+                                <a href="#invoice">
+                                    <i class="fas fa-file-invoice"></i>
+                                    <span>簽單與發票辨識<small>AI 欄位辨識 · 線上 Demo 可試用</small></span>
+                                    <span class="live-dot"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#product-website">
+                                    <i class="fas fa-globe"></i>
+                                    <span>官網建置<small>品牌官網、產品頁與活動頁</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#product-internal">
+                                    <i class="fas fa-database"></i>
+                                    <span>公司內部資料系統<small>客戶、訂單、庫存、報表與審核</small></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#product-harness">
+                                    <i class="fas fa-headset"></i>
+                                    <span>Harness 超級助理與客服系統<small>前台對話介面與後台管理</small></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li><a href="#how">運作方式</a></li>
                     <li><a href="#examples">指令範例</a></li>
                     <li><a href="#about">關於我們</a></li>
@@ -117,6 +146,17 @@
     </header>
 
     <main>
+        <!-- 公告列 -->
+        <div class="announce-bar">
+            <div class="container">
+                <a href="#invoice" class="announce-link">
+                    <span class="announce-badge">NEW</span>
+                    <span>簽單與發票 AI 辨識已開放線上試用，上傳一張簽單立刻看結果</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+
         <!-- 主頁橫幅 -->
         <section id="home" class="hero">
             <div class="container hero-container">
@@ -160,23 +200,124 @@
                     </div>
                     <div class="hero-chip chip-1"><i class="fas fa-globe"></i> 官網</div>
                     <div class="hero-chip chip-2"><i class="fas fa-database"></i> 內部資料系統</div>
-                    <div class="hero-chip chip-3"><i class="fas fa-headset"></i> AI 客服</div>
+                    <div class="hero-chip chip-3"><i class="fas fa-file-invoice"></i> 簽單辨識</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 簽單與發票辨識（線上 Demo） -->
+        <section id="invoice" class="section invoice-section">
+            <div class="container">
+                <div class="invoice-grid">
+                    <div class="invoice-copy">
+                        <span class="eyebrow eyebrow-live"><span class="live-dot"></span> 線上 Demo 開放試用</span>
+                        <h2>簽單與發票 AI 辨識<br>拍一張照片，欄位自動填好</h2>
+                        <p class="invoice-lead">把信用卡簽單、發票拍照上傳，AI 自動判斷單據類型，擷取商店、日期、金額、卡號、授權碼、批次號等欄位，直接輸出成可入帳的結構化資料。不用人工 key-in，也不用再修傳統 OCR 的錯字。</p>
+
+                        <div class="invoice-trust">
+                            <div class="invoice-trust-icon"><i class="fas fa-shield-halved"></i></div>
+                            <div>
+                                <strong>地端模型建置，資料不外流</strong>
+                                <p>辨識模型部署在企業自己的機房或主機上，簽單、發票影像與卡號等敏感資料全程留在內部，不經過外部雲端服務。</p>
+                            </div>
+                        </div>
+
+                        <div class="invoice-stats">
+                            <div><strong>96%</strong><span>實測欄位準確率</span></div>
+                            <div><strong>2 類</strong><span>簽單 / 發票判別</span></div>
+                            <div><strong>4 種</strong><span>jpg png heic pdf</span></div>
+                            <div><strong>批次</strong><span>多張一次上傳</span></div>
+                        </div>
+
+                        <ol class="invoice-steps">
+                            <li><span>1</span><div><strong>上傳</strong>手機拍照或拖曳檔案，可一次多張</div></li>
+                            <li><span>2</span><div><strong>辨識</strong>AI 判斷簽單或發票，逐欄擷取並標示信心度</div></li>
+                            <li><span>3</span><div><strong>輸出</strong>匯出結構化資料，或串入內部資料系統自動入帳，全程在地端完成</div></li>
+                        </ol>
+
+                        <div class="invoice-actions">
+                            <a class="btn btn-primary btn-lg" href="https://invoice.teraliontest.online/" target="_blank" rel="noopener">
+                                <i class="fas fa-play"></i> 立即線上試用 <i class="fas fa-arrow-up-right-from-square btn-ext"></i>
+                            </a>
+                            <a class="btn btn-secondary btn-lg" href="#contact">討論導入與串接</a>
+                        </div>
+                        <p class="invoice-note"><i class="fas fa-circle-info"></i> 拿一張實際的簽單或發票上傳，直接看辨識結果。</p>
+                    </div>
+
+                    <div class="invoice-visual" aria-hidden="true">
+                        <div class="receipt">
+                            <div class="receipt-head">
+                                <strong>信用卡簽單</strong>
+                                <span>SALES SLIP</span>
+                            </div>
+                            <div class="receipt-row"><span>商店</span><b class="hl">安根咖啡 信義店</b></div>
+                            <div class="receipt-row"><span>日期</span><b class="hl">2026/10/08 14:32</b></div>
+                            <div class="receipt-row"><span>卡號</span><b class="hl">**** **** **** 4821</b></div>
+                            <div class="receipt-row"><span>授權碼</span><b class="hl">83F2A1</b></div>
+                            <div class="receipt-row"><span>批次 / 序號</span><b class="hl">000124 / 00318</b></div>
+                            <div class="receipt-divider"></div>
+                            <div class="receipt-row receipt-total"><span>金額 TOTAL</span><b class="hl">NT$ 2,580</b></div>
+                            <div class="receipt-sign">持卡人簽名 <i></i></div>
+                            <div class="scan-line"></div>
+                        </div>
+
+                        <div class="recognize-arrow"><i class="fas fa-wand-magic-sparkles"></i></div>
+
+                        <div class="result-card">
+                            <div class="result-head">
+                                <span><i class="fas fa-circle-check"></i> 辨識完成 · 信用卡簽單</span>
+                                <span class="result-time">6 個欄位</span>
+                            </div>
+                            <ul class="result-fields">
+                                <li><span>商店名稱</span><b>安根咖啡 信義店</b><em>99%</em></li>
+                                <li><span>交易日期</span><b>2026/10/08</b><em>99%</em></li>
+                                <li><span>卡號</span><b>**** 4821</b><em>98%</em></li>
+                                <li><span>金額</span><b>NT$ 2,580</b><em>99%</em></li>
+                                <li><span>授權碼</span><b>83F2A1</b><em>97%</em></li>
+                                <li><span>批次 / 序號</span><b>000124 / 00318</b><em>95%</em></li>
+                            </ul>
+                            <div class="result-foot">
+                                <span class="status-pill"><i class="fas fa-file-export"></i> 已輸出結構化資料</span>
+                                <span class="status-pill status-pill-local"><i class="fas fa-server"></i> 地端模型辨識</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- 產品 -->
-        <section id="products" class="section">
+        <section id="products" class="section section-alt">
             <div class="container">
                 <div class="section-header">
                     <span class="eyebrow">四種方案，一種建置方式</span>
                     <h2>用指令建置，四種企業服務一次到位</h2>
-                    <p>每一種方案都由同一套指令建置引擎驅動。描述需求，AiGenValue 負責生成、部署與後續調整。</p>
+                    <p>每一種方案都由同一套指令建置引擎驅動。描述需求，AiGenValue 負責生成、部署與後續調整。其中簽單與發票辨識已上線，現在就能試用。</p>
                 </div>
                 <div class="product-grid">
-                    <article class="product-card">
+                    <article class="product-card product-card-featured" id="product-invoice">
+                        <div class="product-icon"><i class="fas fa-file-invoice"></i></div>
+                        <span class="product-tag product-tag-live"><span class="live-dot"></span> 線上 Demo 可試用</span>
+                        <h3>簽單與發票辨識</h3>
+                        <p>上傳信用卡簽單或發票照片，AI 自動辨識商店、卡號、金額、授權碼等欄位並輸出結構化資料。在實際簽單測試中欄位準確率達 96%，遠高於傳統 OCR。</p>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> 自動判斷簽單或發票類型</li>
+                            <li><i class="fas fa-check"></i> 支援 jpg、png、heic、pdf，可批次上傳</li>
+                            <li><i class="fas fa-check"></i> 卡號、授權碼、批次號等欄位擷取</li>
+                            <li><i class="fas fa-check"></i> 可串接內部資料系統自動入帳</li>
+                            <li><i class="fas fa-check"></i> 地端模型建置，資料不外流</li>
+                        </ul>
+                        <div class="product-actions">
+                            <a class="btn btn-primary btn-sm" href="https://invoice.teraliontest.online/" target="_blank" rel="noopener">
+                                <i class="fas fa-play"></i> 立即試用 Demo
+                            </a>
+                            <a class="product-more" href="#invoice">了解辨識流程 <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="product-card" id="product-website">
                         <div class="product-icon"><i class="fas fa-globe"></i></div>
-                        <span class="product-tag">01</span>
+                        <span class="product-tag">02</span>
                         <h3>官網建置</h3>
                         <p>用指令生成品牌官網、產品頁與活動頁。內建 SEO 設定、表單收件與響應式版面，改文案、換版型都只要再下一句指令。</p>
                         <ul class="feature-list">
@@ -187,9 +328,9 @@
                         </ul>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" id="product-internal">
                         <div class="product-icon"><i class="fas fa-database"></i></div>
-                        <span class="product-tag">02</span>
+                        <span class="product-tag">03</span>
                         <h3>公司內部資料系統</h3>
                         <p>客戶管理、訂單、庫存、報表、審核流程。描述你的資料與流程，AI 建立資料表、表單、權限與儀表板，讓團隊直接開始使用。</p>
                         <ul class="feature-list">
@@ -200,9 +341,9 @@
                         </ul>
                     </article>
 
-                    <article class="product-card product-card-featured">
+                    <article class="product-card" id="product-harness">
                         <div class="product-icon"><i class="fas fa-headset"></i></div>
-                        <span class="product-tag">03</span>
+                        <span class="product-tag">04</span>
                         <h3>Harness 超級助理與客服系統</h3>
                         <p>含前台對話介面與後台管理系統。AI 助理讀懂你的知識庫與企業資料，回答客戶、處理工單，並讓團隊在後台監看、接手與訓練。</p>
                         <ul class="feature-list">
@@ -212,27 +353,12 @@
                             <li><i class="fas fa-check"></i> 內部超級助理：查資料、跑流程</li>
                         </ul>
                     </article>
-                    <article class="product-card">
-                        <div class="product-icon"><i class="fas fa-file-invoice"></i></div>
-                        <span class="product-tag">04</span>
-                        <h3>簽單與發票辨識</h3>
-                        <p>上傳信用卡簽單或發票照片，AI 自動辨識商店、卡號、金額、授權碼等欄位並輸出結構化資料。在實際簽單測試中欄位準確率達 96%，遠高於傳統 OCR。</p>
-                        <ul class="feature-list">
-                            <li><i class="fas fa-check"></i> 自動判斷簽單或發票類型</li>
-                            <li><i class="fas fa-check"></i> 支援 jpg、png、heic、pdf，可批次上傳</li>
-                            <li><i class="fas fa-check"></i> 卡號、授權碼、批次號等欄位擷取</li>
-                            <li><i class="fas fa-check"></i> 可串接內部資料系統自動入帳</li>
-                        </ul>
-                        <a class="btn btn-secondary btn-sm product-cta" href="https://invoice.teraliontest.online/" target="_blank" rel="noopener">
-                            體驗線上 Demo <i class="fas fa-arrow-up-right-from-square"></i>
-                        </a>
-                    </article>
                 </div>
             </div>
         </section>
 
         <!-- 運作方式 -->
-        <section id="how" class="section section-alt">
+        <section id="how" class="section">
             <div class="container">
                 <div class="section-header">
                     <span class="eyebrow">運作方式</span>
@@ -260,7 +386,7 @@
         </section>
 
         <!-- 指令範例 -->
-        <section id="examples" class="section">
+        <section id="examples" class="section section-alt">
             <div class="container">
                 <div class="section-header">
                     <span class="eyebrow">指令範例</span>
@@ -289,7 +415,7 @@
         </section>
 
         <!-- 關於我們 -->
-        <section id="about" class="section section-alt">
+        <section id="about" class="section">
             <div class="container about-grid">
                 <div class="about-text">
                     <span class="eyebrow">關於安根創新</span>
@@ -315,7 +441,7 @@
         </section>
 
         <!-- 聯絡我們 -->
-        <section id="contact" class="section">
+        <section id="contact" class="section section-alt">
             <div class="container">
                 <div class="contact-card contact-card-simple">
                     <div class="contact-info">
@@ -353,10 +479,11 @@
                 <div class="footer-section">
                     <h4>產品</h4>
                     <ul>
-                        <li><a href="#products">官網建置</a></li>
-                        <li><a href="#products">公司內部資料系統</a></li>
-                        <li><a href="#products">Harness 超級助理與客服系統</a></li>
-                        <li><a href="#products">簽單與發票辨識</a></li>
+                        <li><a href="#invoice">簽單與發票辨識</a></li>
+                        <li><a href="#product-website">官網建置</a></li>
+                        <li><a href="#product-internal">公司內部資料系統</a></li>
+                        <li><a href="#product-harness">Harness 超級助理與客服系統</a></li>
+                        <li><a href="https://invoice.teraliontest.online/" target="_blank" rel="noopener">線上試用 Demo <i class="fas fa-arrow-up-right-from-square"></i></a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -364,7 +491,13 @@
                     <ul>
                         <li><a href="#about">關於我們</a></li>
                         <li><a href="#how">運作方式</a></li>
-                            <li><a href="#contact">聯絡我們</a></li>
+                        <li><a href="#contact">聯絡我們</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>合作廠商</h4>
+                    <ul>
+                        <li><a href="https://www.yudutek.com/" target="_blank" rel="noopener">御督科技 <i class="fas fa-arrow-up-right-from-square"></i></a></li>
                     </ul>
                 </div>
             </div>

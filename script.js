@@ -11,6 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ---------- 導航欄 ----------
+function isMobileNav() {
+    return window.matchMedia('(max-width: 768px)').matches;
+}
+
 function initNavbar() {
     const navbar = document.querySelector('.navbar');
     const hamburger = document.querySelector('.hamburger');
@@ -24,11 +28,45 @@ function initNavbar() {
         });
 
         navMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
+            link.addEventListener('click', (e) => {
+                // 手機版：點「產品」只展開子選單，不關閉主選單
+                if (link.classList.contains('nav-dropdown-toggle') && isMobileNav()) {
+                    e.preventDefault();
+                    const item = link.closest('.nav-dropdown');
+                    const open = item.classList.toggle('open');
+                    link.setAttribute('aria-expanded', String(open));
+                    return;
+                }
                 navMenu.classList.remove('active');
                 hamburger.classList.remove('active');
                 hamburger.setAttribute('aria-expanded', 'false');
+                navMenu.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
             });
+        });
+    }
+
+    // 桌機版：點擊「產品」切換下拉；點外面或按 Esc 關閉
+    const dropdown = document.querySelector('.nav-dropdown');
+    if (dropdown) {
+        const toggle = dropdown.querySelector('.nav-dropdown-toggle');
+        toggle.addEventListener('click', (e) => {
+            if (isMobileNav()) return;
+            e.preventDefault();
+            const open = dropdown.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', String(open));
+        });
+        dropdown.querySelectorAll('.nav-dropdown-menu a').forEach(a => {
+            a.addEventListener('click', () => {
+                dropdown.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                a.blur();
+            });
+        });
+        document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') dropdown.classList.remove('open');
         });
     }
 
@@ -36,7 +74,7 @@ function initNavbar() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            if (href.length < 2) return;
+            if (href.length < 2 || this.classList.contains('nav-dropdown-toggle')) return;
             const target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
@@ -91,7 +129,7 @@ function initForms() {
 
 // ---------- 進場動畫 ----------
 function initReveal() {
-    const targets = document.querySelectorAll('.product-card, .step, .example-card, .stat');
+    const targets = document.querySelectorAll('.product-card, .step, .example-card, .stat, .invoice-copy, .invoice-visual');
     if (!targets.length || !('IntersectionObserver' in window)) return;
 
     const observer = new IntersectionObserver((entries) => {
