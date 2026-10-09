@@ -129,7 +129,7 @@ function initForms() {
 
 // ---------- 進場動畫 ----------
 function initReveal() {
-    const targets = document.querySelectorAll('.product-card, .step, .example-card, .stat, .invoice-copy, .invoice-visual');
+    const targets = document.querySelectorAll('.product-card, .step, .example-card, .stat, .invoice-copy, .invoice-visual, .security-card, .security-process');
     if (!targets.length || !('IntersectionObserver' in window)) return;
 
     const observer = new IntersectionObserver((entries) => {

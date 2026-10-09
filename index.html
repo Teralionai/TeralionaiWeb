@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>安根創新 AiGenValue | 用指令建置企業系統與網頁服務</title>
-    <meta name="description" content="安根創新 AiGenValue 提供以指令驅動的 AI 建置平台。用一句話描述需求，即可建置官網、公司內部資料系統、Harness 超級助理與客服系統前後台，並提供信用卡簽單與發票 AI 辨識方案。">
+    <meta name="description" content="安根創新 AiGenValue 提供以指令驅動的 AI 建置平台。用一句話描述需求，即可建置官網、公司內部資料系統、Harness 超級助理與客服系統前後台，並提供信用卡簽單與發票 AI 辨識方案。每套系統交付前皆依 OWASP 標準通過資訊安全檢測。">
     <meta name="keywords" content="AI 建置平台,指令建置,官網建置,企業內部系統,資料系統,AI 客服系統,AI 助理,Harness,簽單辨識,發票辨識,OCR,低程式碼,安根創新,AiGenValue">
     <meta name="author" content="安根創新 AiGenValue">
     <meta name="robots" content="index, follow">
@@ -162,6 +162,7 @@
                         </ul>
                     </li>
                     <li><a href="#how">運作方式</a></li>
+                    <li><a href="#security">資安承諾</a></li>
                     <li><a href="#examples">指令範例</a></li>
                     <li><a href="#about">關於我們</a></li>
                     <li class="nav-cta"><a href="#contact" class="btn btn-primary btn-sm">預約展示</a></li>
@@ -202,6 +203,7 @@
                         <li><i class="fas fa-check"></i> 自然語言指令，中文直接下</li>
                         <li><i class="fas fa-check"></i> 生成即部署，含前台與後台</li>
                         <li><i class="fas fa-check"></i> 可持續用指令修改與擴充</li>
+                        <li><i class="fas fa-check"></i> 交付前通過資安檢測，附檢測報告</li>
                     </ul>
                 </div>
 
@@ -415,8 +417,107 @@
             </div>
         </section>
 
+        <!-- 資安承諾 -->
+        <section id="security" class="section section-alt security-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="eyebrow"><i class="fas fa-shield-halved"></i> 資安承諾</span>
+                    <h2>我們保證資安：每套系統交付前都通過資訊安全檢測</h2>
+                    <p>AI 建置的系統，一樣要經得起檢驗。每一個交付給你的官網、內部系統或 AI 助理，都依 OWASP 標準做白箱原始碼審查、自動化測試與紅隊攻擊測試，並出具正式的資訊安全檢測報告。嚴重與高風險弱點修復後才交付。</p>
+                </div>
+
+                <div class="security-standards" aria-label="依循標準">
+                    <span><i class="fas fa-certificate"></i> OWASP Top 10 (2021)</span>
+                    <span><i class="fas fa-certificate"></i> OWASP Top 10 for LLM Applications (2025)</span>
+                    <span><i class="fas fa-certificate"></i> OWASP ASVS 4.0</span>
+                </div>
+
+                <div class="security-grid">
+                    <article class="security-card">
+                        <i class="fas fa-user-lock"></i>
+                        <h3>身分驗證與授權</h3>
+                        <p>每個使用者連線綁定隨機權杖並以定時比對驗證；後台每一支管理端點都在路由層強制授權，高敏感操作僅限擁有者。</p>
+                    </article>
+                    <article class="security-card">
+                        <i class="fas fa-key"></i>
+                        <h3>機密與憑證保護</h3>
+                        <p>帳號權杖只存雜湊、明文僅回傳一次；API 金鑰與系統機密即使被 AI 模型讀到，寫入資料庫與回覆前也會先遮罩。</p>
+                    </article>
+                    <article class="security-card">
+                        <i class="fas fa-filter"></i>
+                        <h3>提示注入防護</h3>
+                        <p>針對「忽略指示」、角色覆寫、系統提示詞外洩、內部檔案探測等攻擊樣式做輸入攔截，並搭配 IP 限流與使用者配額。</p>
+                    </article>
+                    <article class="security-card">
+                        <i class="fas fa-eye-slash"></i>
+                        <h3>個資輸出遮罩</h3>
+                        <p>AI 回覆前檢查引用來源，自動遮罩身分證、信用卡號與內部路徑，違規內容會重試或拒答，避免個資二次擴散。</p>
+                    </article>
+                    <article class="security-card">
+                        <i class="fas fa-people-arrows"></i>
+                        <h3>資料隔離</h3>
+                        <p>提示詞只組入已驗證呼叫者本人的資料與歷史；跨使用者的記憶、檔案與圖片一律拒絕，不提供存在性探測。</p>
+                    </article>
+                    <article class="security-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>SSRF 與外部存取防護</h3>
+                        <p>外部網址抓取採協定白名單、拒絕非公網位址、逐跳重驗重導向，並以實際連線 IP 二次驗證，阻擋 DNS rebinding。</p>
+                    </article>
+                    <article class="security-card">
+                        <i class="fas fa-hand"></i>
+                        <h3>AI 只提案、不直接寫入</h3>
+                        <p>後台 AI 助理只能提出變更提案，實際寫入必須由擁有者確認後走確定性端點執行，這是我們的架構紅線。</p>
+                    </article>
+                    <article class="security-card">
+                        <i class="fas fa-clipboard-list"></i>
+                        <h3>稽核紀錄與安全標頭</h3>
+                        <p>管理操作、權限拒絕與工具呼叫全部寫入稽核；回應帶 CSP、X-Frame-Options、nosniff，敏感端點禁止快取。</p>
+                    </article>
+                </div>
+
+                <div class="security-process">
+                    <div class="security-process-copy">
+                        <h3>交付前的檢測流程</h3>
+                        <ol class="security-steps">
+                            <li><span>1</span><div><strong>白箱原始碼審查</strong>逐一列出公開端點與驗證方式，追蹤機密、使用者資料與 AI 輸入輸出的流向。</div></li>
+                            <li><span>2</span><div><strong>自動化測試</strong>執行全套單元與整合測試，含資安專項測試，確保安全控制被測試釘住、改版不回退。</div></li>
+                            <li><span>3</span><div><strong>防護元件實測</strong>直接呼叫輸入防護與輸出遮罩，以代表性攻擊提問驗證判定結果。</div></li>
+                            <li><span>4</span><div><strong>紅隊攻擊測試</strong>以真實模型執行提示注入、提示詞外洩、跨使用者竊探、個資回顯、代為下單等十類攻擊案例。</div></li>
+                            <li><span>5</span><div><strong>外部觀測與報告</strong>確認正式環境回應標頭與公開內容，出具檢測報告，列出風險等級、修補方案與時程。</div></li>
+                        </ol>
+                    </div>
+                    <div class="security-report" aria-hidden="true">
+                        <div class="security-report-head">
+                            <i class="fas fa-file-shield"></i>
+                            <div>
+                                <strong>資訊安全檢測報告</strong>
+                                <span>交付時隨系統提供</span>
+                            </div>
+                        </div>
+                        <ul class="security-report-list">
+                            <li><i class="fas fa-circle-check"></i> 執行摘要與驗收建議</li>
+                            <li><i class="fas fa-circle-check"></i> 檢測範圍、方法與依循標準</li>
+                            <li><i class="fas fa-circle-check"></i> 系統架構與信任邊界</li>
+                            <li><i class="fas fa-circle-check"></i> 安全控制逐項驗證結果</li>
+                            <li><i class="fas fa-circle-check"></i> 紅隊攻擊測試結果</li>
+                            <li><i class="fas fa-circle-check"></i> 發現事項、風險評等與修補時程</li>
+                        </ul>
+                        <div class="security-report-levels">
+                            <span class="lvl lvl-critical">嚴重 0</span>
+                            <span class="lvl lvl-high">高 0</span>
+                            <span class="lvl-note">嚴重與高風險修復後才交付</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="security-foot">
+                    <i class="fas fa-server"></i> 簽單辨識等涉及敏感資料的系統可採地端模型部署，資料不離開企業。<a href="#contact">需要檢測報告範本或討論資安需求 →</a>
+                </p>
+            </div>
+        </section>
+
         <!-- 指令範例 -->
-        <section id="examples" class="section section-alt">
+        <section id="examples" class="section">
             <div class="container">
                 <div class="section-header">
                     <span class="eyebrow">指令範例</span>
@@ -445,7 +546,7 @@
         </section>
 
         <!-- 關於我們 -->
-        <section id="about" class="section">
+        <section id="about" class="section section-alt">
             <div class="container about-grid">
                 <div class="about-text">
                     <span class="eyebrow">關於安根創新</span>
@@ -472,7 +573,7 @@
         </section>
 
         <!-- 聯絡我們 -->
-        <section id="contact" class="section section-alt">
+        <section id="contact" class="section">
             <div class="container">
                 <div class="contact-card contact-card-simple">
                     <div class="contact-info">
@@ -522,6 +623,7 @@
                     <ul>
                         <li><a href="#about">關於我們</a></li>
                         <li><a href="#how">運作方式</a></li>
+                        <li><a href="#security">資安承諾</a></li>
                         <li><a href="#contact">聯絡我們</a></li>
                     </ul>
                 </div>
