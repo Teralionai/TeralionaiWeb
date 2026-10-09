@@ -12,9 +12,17 @@
     <meta name="language" content="zh-TW">
     <link rel="canonical" href="https://teralion.ai/">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="./aigenvalue-mark.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./aigenvalue-mark.png">
+    <meta name="application-name" content="安根創新 AiGenValue">
+    <meta name="apple-mobile-web-app-title" content="安根創新 AiGenValue">
+    <meta name="theme-color" content="#0f5c8c">
+
+    <!-- Favicon / Icons -->
+    <link rel="icon" href="https://teralion.ai/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="48x48" href="https://teralion.ai/favicon-48.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://teralion.ai/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="https://teralion.ai/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://teralion.ai/apple-touch-icon.png">
+    <link rel="manifest" href="./site.webmanifest">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -37,11 +45,18 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "安根創新",
-        "alternateName": "AiGenValue",
-        "url": "https://teralion.ai",
-        "logo": "https://teralion.ai/aigenvalue-logo.png",
-        "description": "以指令驅動的 AI 建置平台，為企業建置官網、內部資料系統與 AI 客服系統。",
+        "@id": "https://teralion.ai/#organization",
+        "name": "安根創新 AiGenValue",
+        "alternateName": ["安根創新", "AiGenValue", "兆獅智能", "Teralionai"],
+        "url": "https://teralion.ai/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://teralion.ai/aigenvalue-logo.png",
+            "width": 1024,
+            "height": 559
+        },
+        "image": "https://teralion.ai/aigenvalue-logo.png",
+        "description": "安根創新 AiGenValue（原兆獅智能 Teralionai）提供以指令驅動的 AI 建置平台，為企業建置官網、內部資料系統、Harness 超級助理與客服系統，並提供簽單與發票 AI 辨識方案。",
         "foundingDate": "2024",
         "address": {
             "@type": "PostalAddress",
@@ -58,9 +73,24 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://teralion.ai/#website",
+        "url": "https://teralion.ai/",
+        "name": "安根創新 AiGenValue",
+        "alternateName": ["安根創新", "AiGenValue"],
+        "inLanguage": "zh-TW",
+        "publisher": { "@id": "https://teralion.ai/#organization" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
         "@type": "SoftwareApplication",
-        "name": "AiGenValue 指令建置平台",
+        "name": "安根創新 AiGenValue 指令建置平台",
         "applicationCategory": "BusinessApplication",
+        "url": "https://teralion.ai/",
+        "image": "https://teralion.ai/aigenvalue-logo.png",
+        "author": { "@id": "https://teralion.ai/#organization" },
         "operatingSystem": "Web",
         "description": "透過自然語言指令建置官網、公司內部資料系統，以及 Harness 超級助理與客服系統前後台管理系統。",
         "offers": {
@@ -93,7 +123,7 @@
     <header class="navbar">
         <div class="nav-container">
             <a href="#home" class="nav-brand" aria-label="安根創新 AiGenValue 首頁">
-                <img src="./aigenvalue-mark.png" alt="AiGenValue" class="logo-image">
+                <img src="./aigenvalue-mark.png" alt="安根創新 AiGenValue" class="logo-image">
                 <span class="nav-title">
                     <strong>安根創新</strong>
                     <span>AiGenValue</span>
@@ -422,6 +452,7 @@
                     <h2>讓每家企業都能用自己的話，建置自己的系統</h2>
                     <p>安根創新 AiGenValue 相信，企業最懂自己的流程，卻常被開發成本與排程卡住。我們把 AI 建置能力做成可以直接下指令的平台，讓需求不再需要翻譯成程式，就能成為可上線的服務。</p>
                     <p>團隊來自 AI 與金融科技領域，擁有實際落地企業系統與智能應用的經驗，專注於把生成式 AI 變成企業可信賴的建置工具。</p>
+                    <p class="about-rename">安根創新 AiGenValue 原名兆獅智能 Teralionai，品牌更名後服務與團隊不變。</p>
                 </div>
                 <div class="stats">
                     <div class="stat">
@@ -471,7 +502,7 @@
             <div class="footer-content">
                 <div class="footer-section footer-brand">
                     <a href="#home" class="nav-brand">
-                        <img src="./aigenvalue-mark.png" alt="AiGenValue" class="logo-image">
+                        <img src="./aigenvalue-mark.png" alt="安根創新 AiGenValue" class="logo-image">
                         <span class="nav-title"><strong>安根創新</strong><span>AiGenValue</span></span>
                     </a>
                     <p>用指令建置企業系統與網頁服務。</p>
@@ -502,7 +533,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 安根創新 AiGenValue. 版權所有.</p>
+                <p>&copy; 2026 安根創新 AiGenValue（原兆獅智能 Teralionai）. 版權所有.</p>
             </div>
         </div>
     </footer>

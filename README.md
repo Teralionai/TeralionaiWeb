@@ -20,6 +20,10 @@ AiGenValueWeb/
 ├── script.js             # 導航、表單、進場動畫、Hero 指令示範、文章篩選
 ├── aigenvalue-logo.png   # 完整標誌（含字樣，供 Open Graph 分享圖使用）
 ├── aigenvalue-mark.png   # 標誌圖示（去背，供導覽列與 favicon 使用）
+├── favicon.ico / favicon-48.png / icon-192.png / icon-512.png / apple-touch-icon.png
+│                         # 網站圖示（Google 搜尋結果 favicon 需 48 的倍數）
+├── site.webmanifest      # Web App Manifest（名稱與圖示）
+├── robots.txt / sitemap.xml  # 搜尋引擎索引
 ├── CNAME                 # GitHub Pages 自訂網域
 └── README.md
 ```
@@ -40,6 +44,8 @@ python3 -m http.server 8080
 
 更換網域時需一併更新：
 
+- `favicon.ico`、`favicon-48.png`、`icon-192.png`、`icon-512.png`、`apple-touch-icon.png`、`site.webmanifest`：網站圖示
+- `robots.txt`、`sitemap.xml`：搜尋引擎索引
 - `CNAME`
 - `index.html` 中的 `canonical`、`og:url`、`og:image`、`twitter:*` 與結構化資料的網址
 
